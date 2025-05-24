@@ -58,25 +58,20 @@ public class Alumno {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        // Solicitar nombre
         System.out.print("Ingrese el nombre de alumno: ");
         String nombre = scanner.nextLine();
 
-        // Solicitar calificaciones
         int[] calificaciones = new int[5];
         for (int i = 0; i < 5; i++) {
             System.out.print("Introduce la calificación " + (i + 1) + ": ");
             calificaciones[i] = scanner.nextInt();
         }
-
-        // Crear objeto alumno
         Alumno alumno = new Alumno(nombre, calificaciones);
 
-        // Procesar resultados
+
         double promedio = alumno.calcularPromedio();
         char calFinal = alumno.CalificacionFinal(promedio);
 
-        // Mostrar resultados
         alumno.imprimirResultados(promedio, calFinal);
 
         scanner.close();
